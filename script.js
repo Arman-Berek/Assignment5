@@ -48,5 +48,15 @@ function removeColumn(){
 let color = "red";
 function selectColor(){
     color = document.getElementById("color-pick").value;
+
 }
 
+
+//8 fill all cells with the currently selected color
+function colorAll(){
+    var cells = document.getElementsByTagName("td");
+    var amountBoxes = amountColumns * amountRows;
+    for(let i = 0; i < amountBoxes; i++) {
+        cells[i].style.backgroundColor = document.getElementById("color-pick").value;
+    }
+}
