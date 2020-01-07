@@ -55,7 +55,7 @@ function selectColor(){
 }
 // 6 - add color to cell.
 function changeColor(){
-   this.style.backgroundColor = color;
+   this.style.backgroundColor = document.getElementById("color-pick").value;
 
 }
 //7 fill all uncolored cells
