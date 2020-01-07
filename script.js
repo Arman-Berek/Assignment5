@@ -13,7 +13,11 @@ function addRow(){
     matrix.appendChild(row);
 }
 
-function addColumn(){
-    
+
+// 3 - remove row
+function removeRow(){
+    var matrix = document.getElementById("matrix");
+    matrix.deleteRow(amountRows-1);
+    amountRows--;
 }
 
