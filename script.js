@@ -51,7 +51,18 @@ function selectColor(){
 
 }
 
-
+//7 fill all uncolored cells
+function colorRest() {
+    var cells = document.getElementsByTagName("td");
+    var amountBoxes = amountColumns * amountRows;
+    
+    for(let i = 0; i < amountBoxes; i++) {
+        var col = cells[i].style.backgroundColor;
+        if(col != "red" && col != "blue" && col != "purple" && col != "green" && col != "black") {
+            cells[i].style.backgroundColor = document.getElementById("color-pick").value;
+        }
+    }
+}
 
 //8 fill all cells with the currently selected color
 function colorAll() {
