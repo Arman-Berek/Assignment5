@@ -52,11 +52,22 @@ function selectColor(){
 }
 
 
+
 //8 fill all cells with the currently selected color
-function colorAll(){
+function colorAll() {
     var cells = document.getElementsByTagName("td");
     var amountBoxes = amountColumns * amountRows;
     for(let i = 0; i < amountBoxes; i++) {
         cells[i].style.backgroundColor = document.getElementById("color-pick").value;
+    }
+}
+
+
+//9 restore original color
+function clearColor() {
+    var cells = document.getElementsByTagName("td");
+    var amountBoxes = amountColumns * amountRows;
+    for(let i = 0; i < amountBoxes; i++) {
+        cells[i].style.backgroundColor = "gray";
     }
 }
