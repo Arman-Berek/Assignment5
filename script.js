@@ -21,3 +21,7 @@ function removeRow(){
     amountRows--;
 }
 
+let color = "red";
+function selectColor(){
+    color = document.getElementById("color-pick").value;
+}
