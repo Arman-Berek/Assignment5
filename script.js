@@ -7,7 +7,7 @@ function addRow(){
     var row = document.createElement("tr");
     for(let i = 0; i < amountColumns;i++){
         let cell = document.createElement("td");
-        cell.classList.add("nocolor")
+        cell.addEventListener("click", changeColor);
         row.appendChild(cell);
     }
     amountRows++;
@@ -20,7 +20,9 @@ function addColumn(){
 
     for(let i = 0; i < amountRows; i++) {
         let cell = document.getElementsByTagName("tr")[i];
+        
         var col = document.createElement("td");
+        col.addEventListener("click", changeColor);
         cell.appendChild(col);
     }
     amountColumns++;
@@ -34,16 +36,27 @@ function removeRow(){
     amountRows--;
 }
 
+// 4 - remove column
+function removeColumn(){
+    var matrix = document.getElementById("matrix");
+    let cells = document.getElementsByTagName("tr"); //rows
+    for(let i = 0; i < cells.length; i++) {
+        var cell = cells[i];
+        cell.deleteCell(0);
+    }
+    amountColumns--;
+}
+
 // 5 - pick color
 let color = "red";
 function selectColor(){
     color = document.getElementById("color-pick").value;
 
 }
-
+// 6 - add color to cell.
 function changeColor(){
    this.style.backgroundColor = color;
-   this.classList.remove("nocolor");
+
 }
 //7 fill all uncolored cells
 function colorRest() {
