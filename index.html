@@ -5,7 +5,7 @@
             td{
                 height: 50px;
                 width: 50px;
-                background-color: red;
+                background-color: gray;
             }
         </style>
     </head>
@@ -14,12 +14,13 @@
         <button onclick="addColumn()">Add a Column</button>
         <table id="matrix">
             <tr>
-                <td>
-                </td>
-                
+                <td></td>               
             </tr>
         </table>
         <button onclick="removeRow()">Remove a Row</button>
+        <button onclick="removeColumn()">Remove a Column</button>
+        <button onclick="colorAll()">Color All</button>
+        <button onclick="colorRest()">Color Rest</button>
         <div class="picker">
             <select id="color-pick">
                 <option value="red">red</option>
