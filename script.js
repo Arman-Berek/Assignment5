@@ -7,6 +7,7 @@ function addRow(){
     var row = document.createElement("tr");
     for(let i = 0; i < amountColumns;i++){
         let cell = document.createElement("td");
+        cell.classList.add("nocolor")
         row.appendChild(cell);
     }
     amountRows++;
@@ -21,7 +22,13 @@ function removeRow(){
     amountRows--;
 }
 
+// 5 - pick color
 let color = "red";
 function selectColor(){
     color = document.getElementById("color-pick").value;
+}
+
+function changeColor(){
+   this.style.backgroundColor = color;
+   this.classList.remove("nocolor");
 }
