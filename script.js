@@ -14,6 +14,18 @@ function addRow(){
     matrix.appendChild(row);
 }
 
+//2-add columns
+function addColumn(){
+    var matrix = document.getElementById("matrix");
+
+    for(let i = 0; i < amountRows; i++) {
+        let cell = document.getElementsByTagName("tr")[i];
+        var col = document.createElement("td");
+        cell.appendChild(col);
+    }
+    amountColumns++;
+    matrix.appendChild(cell);
+}
 
 // 3 - remove row
 function removeRow(){
@@ -26,9 +38,41 @@ function removeRow(){
 let color = "red";
 function selectColor(){
     color = document.getElementById("color-pick").value;
+
 }
 
 function changeColor(){
    this.style.backgroundColor = color;
    this.classList.remove("nocolor");
+}
+//7 fill all uncolored cells
+function colorRest() {
+    var cells = document.getElementsByTagName("td");
+    var amountBoxes = amountColumns * amountRows;
+    
+    for(let i = 0; i < amountBoxes; i++) {
+        var col = cells[i].style.backgroundColor;
+        if(col != "red" && col != "blue" && col != "purple" && col != "green" && col != "black") {
+            cells[i].style.backgroundColor = document.getElementById("color-pick").value;
+        }
+    }
+}
+
+//8 fill all cells with the currently selected color
+function colorAll() {
+    var cells = document.getElementsByTagName("td");
+    var amountBoxes = amountColumns * amountRows;
+    for(let i = 0; i < amountBoxes; i++) {
+        cells[i].style.backgroundColor = document.getElementById("color-pick").value;
+    }
+}
+
+
+//9 restore original color
+function clearColor() {
+    var cells = document.getElementsByTagName("td");
+    var amountBoxes = amountColumns * amountRows;
+    for(let i = 0; i < amountBoxes; i++) {
+        cells[i].style.backgroundColor = "gray";
+    }
 }
