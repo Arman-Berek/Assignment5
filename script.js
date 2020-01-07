@@ -13,7 +13,16 @@ function addRow(){
     matrix.appendChild(row);
 }
 
+//2-add columns
 function addColumn(){
+    var matrix = document.getElementById("matrix");
 
+    for(let i = 0; i < amountRows; i++) {
+        let cell = document.getElementsByTagName("tr")[i];
+        var col = document.createElement("td");
+        cell.appendChild(col);
+    }
+    amountColumns++;
+    matrix.appendChild(cell);
 }
 
