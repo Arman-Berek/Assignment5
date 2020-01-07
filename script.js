@@ -13,6 +13,7 @@ function addRow(){
     matrix.appendChild(row);
 }
 
+
 // 3 - remove row
 function removeRow(){
     var matrix = document.getElementById("matrix");
