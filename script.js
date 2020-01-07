@@ -26,3 +26,27 @@ function addColumn(){
     matrix.appendChild(cell);
 }
 
+// 3 - remove row
+function removeRow(){
+    var matrix = document.getElementById("matrix");
+    matrix.deleteRow(amountRows-1);
+    amountRows--;
+}
+
+// 4 - remove column
+function removeColumn(){
+    var matrix = document.getElementById("matrix");
+    let cells = document.getElementsByTagName("tr"); //rows
+    for(let i = 0; i < cells.length; i++) {
+        var cell = cells[i];
+        cell.deleteCell(0);
+    }
+    amountColumns--;
+}
+
+//5
+let color = "red";
+function selectColor(){
+    color = document.getElementById("color-pick").value;
+}
+
